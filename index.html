@@ -1,14 +1,76 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hello World</title>
   <link href='/style.css' rel='stylesheet'>
 </head>
+
 <body>
   <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+
+  <button onclick="capturatexto();">Press me</button>
+
+  <script>
+    //console.log(" no es un palíndromo");
+    // Función para verificar si una cadena es un palíndromo
+    function esPalindromo(texto) {
+      // Eliminar espacios y convertir a minúsculas
+      texto = texto.replace(/ /g, "").toLowerCase();
+
+      // Invertir la cadena
+      var textoInvertido = texto.split("").reverse().join("");
+
+      // Comparar la cadena original con la invertida
+      return texto === textoInvertido;
+    }
+
+    // Función para generar palíndromos aleatorios
+    function generarPalindromo(longitud) {
+      // Definir el alfabeto
+      var letras = "abcdefghijklmnopqrstuvwxyz";
+
+      // Generar un string aleatorio
+      var palindromo = "";
+      for (var i = 0; i < longitud / 2; i++) {
+        var indiceAleatorio = Math.floor(Math.random() * letras.length);
+        palindromo += letras[indiceAleatorio];
+      }
+
+      // Agregar la mitad invertida del palíndromo
+      palindromo += palindromo.split("").reverse().join("");
+
+      return palindromo;
+    }
+
+    function capturatexto() {
+      // Ejemplo de uso
+      // Verificar si una cadena es un palíndromo
+      var texto = "Anita lava la tina";
+      var longitudminima = 0;
+
+      //verificar...
+      longitudminima = texto.length;
+      if (longitudminima >= 3) {
+        if (esPalindromo(texto)) {
+          console.log(texto + " es un palíndromo");
+        } else {
+          console.log(texto + " no es un palíndromo");
+        }
+
+        // Generar un palíndromo aleatorio de 8 caracteres
+        var palindromoAleatorio = generarPalindromo(longitudminima);
+        //console.log("Palíndromo aleatorio:", palindromoAleatorio);
+        
+      }
+      //f.
+    }
+
+  </script>
+
+
 </body>
+
 </html>
