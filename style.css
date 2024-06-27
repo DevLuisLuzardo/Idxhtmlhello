@@ -1,4 +1,8 @@
 /* Add styles here */
 body {
-    background-color: yellowgreen; /* Azul marino */
+  background-color: yellowgreen; /* Azul marino */
+}
+
+p {
+  background-color: yellowgreen; /* Azul marino */
 }
